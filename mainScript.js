@@ -2,4 +2,8 @@ const add = function (a, b) {
   return a + b;
 };
 
-console.log(add(2, 3));
+const subtract = function (a, b) {
+  return a - b;
+};
+
+console.log(subtract(2, 3));
