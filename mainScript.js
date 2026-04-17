@@ -14,4 +14,10 @@ const divide = function (a, b) {
   return a / b;
 };
 
-console.log(divide(2, 3));
+let a, b, operator;
+
+a = 1;
+b = 2;
+operator = "*";
+
+console.log(a, b, operator);
