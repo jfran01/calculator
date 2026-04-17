@@ -16,8 +16,18 @@ const divide = function (a, b) {
 
 let a, b, operator;
 
-a = 1;
-b = 2;
-operator = "*";
+const operate = function (a, b, op) {
+  if (op == "+") return add(a, b);
+  else if (op == "-") return subtract(a, b);
+  else if (op == "*") return multiply(a, b);
+  else if (op == "/") return divide(a, b);
+  else return alert("Error: Operator not recognised");
+};
 
-console.log(a, b, operator);
+let result = operate(
+  Number(prompt("Give any number")),
+  Number(prompt("Give a second number")),
+  prompt("Give an operator: +, -, * or /"),
+);
+
+console.log(result);
