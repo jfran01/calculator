@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "DIGITAL";
+  src: url(ds_digital/DS-DIGI.TTF);
+}
+
+body {
+  background-color: #f3f1e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 5vh;
+  border: solid black 1px;
+  border-radius: 50px;
+  background-color: #e7ebc8;
+  font-family: monospace;
+}
+
+#input,
+#btn-container {
+  width: 700px;
+  max-width: 90vw;
+}
+
+#input {
+  display: flex;
+  box-sizing: border-box;
+  border: solid black 1px;
+  border-radius: 20px;
+  height: 8vh;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px;
+  padding: 0px 1vw;
+  font-size: 7vh;
+  font-family: "DIGITAL", monospace;
+  background-color: #e2e1df;
+}
+
+#btn-container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  width: 60vw;
+  height: 42vh;
+  gap: 10px;
+}
+
+.btn {
+  flex: 0 0 calc((100% - 40px) / 5);
+  box-sizing: border-box;
+  padding: 10px;
+  border: solid black 1px;
+}
+
+#equals {
+  flex: 0 0 calc(((100% - 40px) / 5) * 2 + 10px);
+}
+
+.num {
+  border-radius: 50%;
+  height: 10vh;
+  background-color: #c2dcab;
+}
+
+.btn:not(.num) {
+  border-radius: 10px;
+  height: 6vh;
+  background-color: #778f77;
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
