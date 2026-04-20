@@ -31,8 +31,8 @@ const buttons = document.querySelectorAll(".btn");
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
     if (event.target.classList.contains("op")) {
-      if (operator) {
-        let answer = operate(a, b, operator);
+      if (a && b && operator) {
+        let answer = operate(Number(a), Number(b), operator);
         console.log(answer);
       }
       operator = event.target.value;
