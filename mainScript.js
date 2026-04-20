@@ -14,7 +14,9 @@ const divide = function (a, b) {
   return a / b;
 };
 
-let a, b, operator;
+let a = "";
+let b = "";
+let operator;
 
 const operate = function (a, b, op) {
   if (op == "+") return add(a, b);
@@ -24,10 +26,27 @@ const operate = function (a, b, op) {
   else return alert("Error: Operator not recognised");
 };
 
-let result = operate(
-  Number(prompt("Give any number")),
-  Number(prompt("Give a second number")),
-  prompt("Give an operator: +, -, * or /"),
-);
+const buttons = document.querySelectorAll(".btn");
 
-console.log(result);
+buttons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    if (event.target.classList.contains("op")) {
+      if (operator) {
+        let answer = operate(a, b, operator);
+        console.log(answer);
+      }
+      operator = event.target.value;
+      console.log(operator);
+    } else if (button.classList.contains("num") && !operator) {
+      a += event.target.value;
+    } else if (button.classList.contains("num") && operator) {
+      b += event.target.value;
+    } else if (button.value === "clear") {
+      a = "";
+      b = "";
+      operator = "";
+    }
+
+    console.log(`a: ${a}, b: ${b}, operator: ${operator}`);
+  });
+});
