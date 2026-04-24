@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator Project</title>
     <script src="mainScript.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="zero" class="num-btn" value="0">0</button>
-    <button id="double-zero" class="num-btn" value="00">00</button>
-    <button id="decimal" class="num-btn" value=".">.</button>
-    <button id="equals" class="op-btn" value="=">=</button>
-    <button id="one" class="num-btn" value="1">1</button>
-    <button id="two" class="num-btn" value="2">2</button>
-    <button id="three" class="num-btn" value="3">3</button>
-    <button id="add" class="op-btn" value="+">+</button>
-    <button id="subtract" class="op-btn" value="-">-</button>
-    <button id="four" class="num-btn" value="4">4</button>
-    <button id="five" class="num-btn" value="5">5</button>
-    <button id="six" class="num-btn" value="6">6</button>
-    <button id="multiply" class="op-btn" value="*">&#215;</button>
-    <button id="divide" class="op-btn" value="/">&#247;</button>
-    <button id="seven" class="num-btn" value="7">7</button>
-    <button id="eight" class="num-btn" value="8">8</button>
-    <button id="nine" class="num-btn" value="9">9</button>
-    <button id="delete">DEL</button>
-    <button id="clear">AC</button>
+    <div id="calculator">
+      <div id="input"></div>
+      <div id="btn-container">
+        <button id="zero" class="num btn" value="0">0</button>
+        <button id="double-zero" class="num btn" value="00">00</button>
+        <button id="decimal" class="num btn" value=".">.</button>
+        <button id="equals" class="op btn" value="=">=</button>
+        <button id="one" class="num btn" value="1">1</button>
+        <button id="two" class="num btn" value="2">2</button>
+        <button id="three" class="num btn" value="3">3</button>
+        <button id="add" class="op btn" value="+">+</button>
+        <button id="subtract" class="op btn" value="-">-</button>
+        <button id="four" class="num btn" value="4">4</button>
+        <button id="five" class="num btn" value="5">5</button>
+        <button id="six" class="num btn" value="6">6</button>
+        <button id="multiply" class="op btn" value="×">&#215;</button>
+        <button id="divide" class="op btn" value="÷">&#247;</button>
+        <button id="seven" class="num btn" value="7">7</button>
+        <button id="eight" class="num btn" value="8">8</button>
+        <button id="nine" class="num btn" value="9">9</button>
+        <button id="delete" class="btn" value="delete">DEL</button>
+        <button id="clear" class="btn" value="clear">AC</button>
+      </div>
+    </div>
   </body>
 </html>

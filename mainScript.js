@@ -22,8 +22,8 @@ let justCalculated = false;
 const operate = function (a, b, op) {
   if (op == "+") return add(a, b);
   else if (op == "-") return subtract(a, b);
-  else if (op == "*") return multiply(a, b);
-  else if (op == "/") return divide(a, b);
+  else if (op == "×") return multiply(a, b);
+  else if (op == "÷") return divide(a, b);
   else return alert("Error: Operator not recognised");
 };
 
@@ -58,14 +58,18 @@ buttons.forEach((button) => {
       }
     } else if (button.classList.contains("num") && operator) {
       b += event.target.value;
-      display.textContent += event.target.value;
+      if ((operator === "÷" && b === "0") || (operator === "÷" && b === "00")) {
+        display.textContent = "shut up smart arse";
+        a = "";
+        b = "";
+        operator = "";
+        justCalculated = true;
+      } else display.textContent += event.target.value;
     } else if (button.value === "clear") {
       a = "";
       b = "";
       operator = "";
       display.textContent = ``;
     }
-
-    console.log(`a: ${a}, b: ${b}, operator: ${operator}`);
   });
 });
