@@ -47,6 +47,14 @@ buttons.forEach((button) => {
       }
       operator = event.target.value;
       display.textContent += event.target.value;
+    } else if (event.target.value === ".") {
+      if (!operator && !a.includes(".")) {
+        a += ".";
+        display.textContent += event.target.value;
+      } else if (operator && !b.includes(".")) {
+        b += ".";
+        display.textContent += event.target.value;
+      }
     } else if (button.classList.contains("num") && !operator) {
       if (justCalculated) {
         a = event.target.value;
