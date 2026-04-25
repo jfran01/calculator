@@ -27,13 +27,17 @@ const operate = function (a, b, op) {
   else return alert("Error: Operator not recognised");
 };
 
+const roundResult = function (num) {
+  return Math.round(num * 1000000) / 1000000;
+};
+
 const buttons = document.querySelectorAll(".btn");
 const display = document.querySelector("#input");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
     if (button.value === "=") {
-      let total = operate(Number(a), Number(b), operator);
+      let total = roundResult(operate(Number(a), Number(b), operator));
       justCalculated = true;
       a = total.toString();
       b = "";
@@ -41,7 +45,7 @@ buttons.forEach((button) => {
       display.textContent = `${a}`;
     } else if (event.target.classList.contains("op")) {
       if (a && b && operator) {
-        let answer = operate(Number(a), Number(b), operator);
+        let answer = roundResult(operate(Number(a), Number(b), operator));
         a = answer;
         b = "";
       }
