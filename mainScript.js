@@ -81,3 +81,24 @@ buttons.forEach((button) => {
     }
   });
 });
+
+document.addEventListener("keydown", (e) => {
+  let value;
+  switch (e.key) {
+    case "*":
+      value = "×";
+      break;
+    case "/":
+      value = "÷";
+      break;
+    case "Enter":
+      value = "=";
+      break;
+    default:
+      value = e.key;
+  }
+  let button = document.querySelector(`[value = "${value}"]`);
+  if (button) {
+    button.click();
+  }
+});

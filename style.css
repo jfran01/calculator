@@ -68,7 +68,8 @@ body {
   flex: 0 0 calc(((100% - 40px) / 5) * 2 + 10px);
 }
 
-.num {
+.num,
+#decimal {
   border-radius: 50%;
   height: 10vh;
   background-color: #c2dcab;
