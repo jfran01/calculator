@@ -36,7 +36,14 @@ const display = document.querySelector("#input");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    if (button.value === "=") {
+    if (button.value === "delete") {
+      display.textContent = display.textContent.slice(0, -1);
+      if (a && !operator) {
+        a = a.slice(0, -1);
+      } else if (b && operator) {
+        b = b.slice(0, -1);
+      }
+    } else if (button.value === "=") {
       let total = roundResult(operate(Number(a), Number(b), operator));
       justCalculated = true;
       a = total.toString();
@@ -97,6 +104,9 @@ document.addEventListener("keydown", (e) => {
       break;
     case "Enter":
       value = "=";
+      break;
+    case "Backspace":
+      value = "delete";
       break;
     default:
       value = e.key;
